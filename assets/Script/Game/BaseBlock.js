@@ -32,7 +32,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
-
+    //测试中文乱码
     start () {
 
     },
