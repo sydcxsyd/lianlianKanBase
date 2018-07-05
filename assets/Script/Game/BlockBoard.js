@@ -60,6 +60,27 @@ cc.Class({
                 blockDic[key[0] + j] ++;
             }
         }
+
+        for(let i = 0 ; i < this.boardLength ; i++){
+            if(moveDic[i] > 0){
+                let newBlock = this.createRandomBlock();
+                this.addBlockToBoard(newBlock);
+                let startSPos = cc.v2(i,this.boardLength);
+                let endSPos = cc.v2(i,this.boardLength - moveDic[i]);
+                this.blockMove(newBlock,startSPos,endSPos);
+            }
+        }
+    },
+
+    blockMove (block,startSPos,endSPos){
+        if(typeof(endSPos) == undefined){
+            endSPos = startSPos;
+            startSPos = block.pos;
+        }
+    },
+
+    addBlockToBoard(newBlock){
+
     },
 
     _createBoardDic (){
